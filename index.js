@@ -15,8 +15,8 @@ const optionList = [
 ];
 const sections = [
     {
-        header: 'Aplikacja generująca cykl Hamiltona',
-        content: 'Generates something {italic very} important.',
+        header: 'Aplikacja wyszukująca Cykl Hamiltona',
+        content: 'Cykl jest wyszukiwany na szachownicy ruchem {italic skoczka szachowego}.',
     },
     {
         header: 'Opcje',

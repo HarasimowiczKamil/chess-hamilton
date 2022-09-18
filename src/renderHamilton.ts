@@ -33,7 +33,7 @@ export default (cycle: BigMap, boardSize: bigint) => {
     const a = BigInt(aStr)*fieldSize + 50n + fontSize;
     const b = BigInt(bStr)*fieldSize + 50n + fontSize;
 
-    svg += `<circle cx="${a}" cy="${b}" r="5" style="stroke:black;stroke-width:1;fill:${key===0n ? 'rgba(255,0,28,0.99)' : 'rgba(23,225,0,0.99)'}" />\n`;
+    svg += `<circle cx="${a}" cy="${b}" r="5" style="stroke:black;stroke-width:1;fill:${key ? 'rgba(23,225,0,0.99)' : 'rgba(255,0,28,0.99)'}" />\n`;
 
     if (!lastValue) {
       lastValue = {a,b};

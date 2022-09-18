@@ -69,7 +69,7 @@ const findPath = (boardSize: bigint, path: BigMap, lastStep: Point, onFind: (pat
   if (possibleMoves.length === 0) {
     failCounter++;
     if (new Date().getTime() - lastPrint > 30000) {
-      logger(`Odrzucono już ${failCounter} ścieżek`, (new Date().getTime() - startTime)/1000, 'ms');
+      logger(`Odrzucono już ${failCounter} ścieżek`, (new Date().getTime() - startTime)/1000, 's');
       lastPrint = new Date().getTime();
     }
     return;
@@ -84,7 +84,7 @@ const findPath = (boardSize: bigint, path: BigMap, lastStep: Point, onFind: (pat
     const a = BigInt(aStr);
     const b = BigInt(bStr);
 
-    // Test na Cykl hamiltona, Ścieżka Hamiltona jest już na pewno
+    // Test na Cykl Hamiltona, Ścieżka Hamiltona jest już na pewno
     const movToBegin = MOVES.filter((move) => {
       return a === lastPosition.a + move.a &&
         b === lastPosition.b + move.b;
@@ -108,7 +108,7 @@ export default (boardSize: bigint, point: Point, hasStopOnFirs: boolean) => {
   try {
     findPath(boardSize, path, point, (path) => {
       const link = renderHamilton(path, boardSize);
-      console.log('Znaleziono cykl Hamiltona!', `${link}`);
+      console.log('Znaleziono Cykl Hamiltona!', `${link}`);
       if (hasStopOnFirs) {
         console.log('Zakończono po', (new Date().getTime() - startTime)/1000, 'ms');
         console.log(`Odrzucono ${failCounter} i znaleziono ${counter} Cykli Hamiltona`);
