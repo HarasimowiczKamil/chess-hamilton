@@ -1,0 +1,24 @@
+{
+    "name": "chess-hamilton",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "type": "commonjs",
+    "author": "Kamil Harasimowicz <kharasimwoicz@nolifer.pl> (https://nolifer.pl)",
+    "dependencies": {
+        "@types/command-line-args": "^5.2.0",
+        "@types/command-line-usage": "^5.0.2",
+        "@types/debug": "^4.1.7",
+        "@types/node": "^18.7.18",
+        "command-line-args": "^5.2.1",
+        "command-line-usage": "^6.1.3",
+        "debug": "^4.3.4",
+        "typescript": "^4.8.3"
+    },
+    "scripts": {
+        "build": "tsc",
+        "predev": "tsc",
+        "dev": "node ./index.js",
+        "start": "node ./index.js"
+    }
+}
