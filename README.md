@@ -42,4 +42,4 @@ Przykład użycia
 | Command                     | i9-9900K 32GB HDD WSL2                                                         | i5-7200U 20GB SSD                                                      |
 |-----------------------------|--------------------------------------------------------------------------------|------------------------------------------------------------------------|
 | `yarn start -n 6 -s 0,0`    | Przekroczono limit czasu 10800000 (6831 Cykli Hamiltona, ostatni po ok. 9276s) | Przekroczono limit czasu 10800000 (3767 Cykli Hamiltona po ok. 10680s) |
-| `yarn start -n 6 -s 0,0 -f` |                                                                                | ~ 9,4735s                                                              |
+| `yarn start -n 6 -s 0,0 -f` | ~ 6,4836s                                                                      | ~ 9,4735s                                                              |
