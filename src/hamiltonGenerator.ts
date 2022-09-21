@@ -47,7 +47,7 @@ const isInPath = (path: BigMap, location: Point): boolean => {
 const key = (point: Point): string => {
   return `${point.a}x${point.b}`;
 };
-let counter = 1n;
+let counter = 0n;
 let failCounter = 0n;
 let lastPrint = new Date().getTime();
 
@@ -116,7 +116,11 @@ export default (boardSize: bigint, point: Point, hasStopOnFirs: boolean) => {
       }
     });
 
-    console.log('hamilton path', counter);
+    if (counter) {
+      console.log('hamilton path', counter);
+    } else {
+      console.log('NIE');
+    }
   } catch (e) {
     console.warn(e);
   }

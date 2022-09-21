@@ -39,7 +39,7 @@ const isInPath = (path, location) => {
 const key = (point) => {
     return `${point.a}x${point.b}`;
 };
-let counter = 1n;
+let counter = 0n;
 let failCounter = 0n;
 let lastPrint = new Date().getTime();
 const findPath = (boardSize, path, lastStep, onFind) => {
@@ -98,7 +98,12 @@ exports.default = (boardSize, point, hasStopOnFirs) => {
                 process.exit(0);
             }
         });
-        console.log('hamilton path', counter);
+        if (counter) {
+            console.log('hamilton path', counter);
+        }
+        else {
+            console.log('NIE');
+        }
     }
     catch (e) {
         console.warn(e);
