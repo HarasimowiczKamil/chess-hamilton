@@ -90,8 +90,9 @@ exports.default = (boardSize, point, hasStopOnFirs) => {
     path.add(key(point));
     try {
         findPath(boardSize, path, point, (path) => {
+            counter++;
             const link = (0, renderHamilton_1.default)(path, boardSize);
-            console.log('Znaleziono Cykl Hamiltona!', `${link}`);
+            console.log('Cykl Hamiltona!', path.toString(), `${link}`);
             if (hasStopOnFirs) {
                 console.log('Zakończono po', (new Date().getTime() - startTime) / 1000, 'ms');
                 console.log(`Odrzucono ${failCounter} i znaleziono ${counter} Cykli Hamiltona`);

@@ -1,4 +1,5 @@
 "use strict";
+// Implementacja na Map/Set
 // export default class BigMap {
 //   private size;
 //   private content;
@@ -46,33 +47,72 @@
 //   }
 // }
 Object.defineProperty(exports, "__esModule", { value: true });
+// Implementacja na string
+// export default class BigMap {
+//   private size;
+//   private content;
+//
+//   constructor(map: string = '', size: bigint = 0n) {
+//     this.content = map;
+//     this.size = size;
+//   }
+//
+//   get length() {
+//     return this.size;
+//   }
+//
+//   get first() {
+//     return this.content.split(',', 1)[0];
+//   }
+//
+//   has(el: any) {
+//     return this.content.match(new RegExp(`(,|^)${el}(,|$)`, 'g')) !== null;
+//   }
+//
+//   add(el: any): this {
+//     this.content += `${this.size === 0n ? '' : ','}${el}`;
+//     this.size++;
+//     return this;
+//   }
+//
+//   forEach(fn: (value: any, key: any) => void, thisArg?: any) {
+//     this.content.split(',').forEach(fn, thisArg);
+//   }
+//
+//   clone() {
+//     return new BigMap(this.content, this.size);
+//   }
+//
+//   toString() {
+//     return this.content;
+//   }
+// }
+// Implementacja na array
 class BigMap {
-    constructor(map = '', size = 0n) {
-        this.content = map;
-        this.size = size;
+    constructor(map = [], size = 0n) {
+        this.content = [...map];
     }
     get length() {
-        return this.size;
+        return BigInt(this.content.length);
     }
     get first() {
-        return this.content.split(',', 1)[0];
+        return this.content[0];
     }
     has(el) {
-        return this.content.match(new RegExp(`[,^]${el}[,$]`, 'g')) !== null;
+        return this.content.includes(el);
     }
     add(el) {
-        this.content += `${this.size === 0n ? '' : ','}${el}`;
-        this.size++;
+        this.content.push(el);
         return this;
     }
     forEach(fn, thisArg) {
-        this.content.split(',').forEach(fn, thisArg);
+        this.content.forEach(fn, thisArg);
     }
     clone() {
-        return new BigMap(this.content, this.size);
+        return new BigMap(this.content);
     }
     toString() {
-        return this.content;
+        return this.content.join(',');
     }
 }
 exports.default = BigMap;
