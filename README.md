@@ -39,7 +39,7 @@ Przykład użycia
 
 ## Stats
 
-| Command                     | i9-9900K 32GB HDD WSL2                                                         | i5-7200U 20GB SSD                                                      |
-|-----------------------------|--------------------------------------------------------------------------------|------------------------------------------------------------------------|
-| `yarn start -n 6 -s 0,0`    | Przekroczono limit czasu 10800000 (6831 Cykli Hamiltona, ostatni po ok. 9276s) | Przekroczono limit czasu 10800000 (6831 Cykli Hamiltona po ok. 9500s) |
-| `yarn start -n 6 -s 0,0 -f` | ~ 4,3076s                                                                      | ~ 6,3501s                                                              |
+| Command                     | i9-9900K 32GB HDD WSL2                                                                     | i5-7200U 20GB SSD                                                               |
+|-----------------------------|--------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------|
+| `yarn start -n 6 -s 0,0`    | Przekroczono limit czasu 10800000ms (w sumie 7091 Cykli Hamiltona, 6831 cykl po ok. 6480s) | Przekroczono limit czasu 10800000ms (w sumie 6831 Cykli Hamiltona po ok. 9500s) |
+| `yarn start -n 6 -s 0,0 -f` | ~ 4,3076s                                                                                  | ~ 6,3501s                                                                       |
